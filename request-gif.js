@@ -5,6 +5,12 @@ $(document).ready(function() {
 });
 
 
+function setCaptchaStatus(isValidCaptcha) {
+    $("#captcha_err").attr("hidden", isValidCaptcha);
+    $("#captcha_err_msg").attr("hidden", isValidCaptcha);
+    $("#sub_captcha").attr("hidden", isValidCaptcha);
+}
+
 /**
  * sends an asynchronous request to Giphy.com asking for a random GIF using the 
  * user's search term (along with "jackson 5")
@@ -16,6 +22,15 @@ function fetchAndDisplayGif(event) {
     // This prevents the form submission from doing what it normally does: send a request (which would cause our page to refresh).
     // Because we will be making our own AJAX request, we dont need to send a normal request and we definitely don't want the page to refresh.
     event.preventDefault();
+
+    // check "captcha"
+    var user_captcha = $("#five_or_5").val();
+    if (user_captcha != "5" && user_captcha != "Five" && user_captcha != "five") {
+        setCaptchaStatus(false);
+        return;
+    } else {
+        setCaptchaStatus(true);
+    }
     
     // get the user's input text from the DOM
     var searchQuery = $("#userSearchTerm").val();

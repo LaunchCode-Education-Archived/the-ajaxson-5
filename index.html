@@ -11,6 +11,16 @@
     <form id="form-gif-request" />
         <label>What kind of Jackson 5 related gif do you want?</label>
         <input name="tag" id="userSearchTerm" type="text"/>
+        <div id="sub_captcha">
+            <label>Prove you are not a robot by answering this riddle:</label>
+            <div>
+                <input id="five_or_5" type="text" />
+                <label>Jacksons are better than 1.</label>
+            </div>
+            <div id="captcha_err" hidden>
+                <p id="captcha_err_msg">No GIFs for you.</p>
+            </div>
+        </div>
         <input type="submit" value="Get my Gif!" />
     </form>
 
