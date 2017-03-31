@@ -12,34 +12,41 @@
     <h1 class="text-center">AJAXson 5</h1>
   </div>
       
-  <div class="container">
-      <div class="container">
+  <div class="container-fluid">
+    <div class="container-fluid">
 
-      <form id="form-gif-request" />
-          <label>What kind of Jackson 5 related gif do you want?</label>
-          <input name="tag" id="userSearchTerm" type="text"/>
-          <div id="sub_captcha">
-              <label>Prove you are not a robot by answering this riddle:</label>
-              <div>
-                  <input id="five_or_5" type="text" />
-                  <label>Jacksons are better than 1.</label>
-              </div>
-              <div id="captcha_err" hidden>
-                  <p id="captcha_err_msg">No GIFs for you.</p>
-              </div>
-          </div>
+      <div id="background_div">
+
+        <div class="well">
+            <form id="form-gif-request" />
+                <label>What kind of Jackson 5 related gif do you want?</label>
+                <input name="tag" id="userSearchTerm" type="text"
+                    placeholder="e.g., 'dance'"/>
+        </div>
+
+        <div id="sub_captcha" class="well">
+            <label>Prove you are not a robot by answering this riddle:</label>
+            <div class="input-group">
+                <input id="five_or_5" class="form-control" type="text">
+                <span class="input-group-addon">Jacksons are better than 1.</span>
+            </div>
+            <div id="captcha_err" hidden>
+                <p id="captcha_err_msg">No GIFs for you.</p>
+            </div>
+        </div>
+
           <input type="submit" class="btn btn-primary" value="Get my Gif!" />
       </form>
-  
-      <img id="gif" src="" hidden />
+      </div>
+ 
+      <div class="container">
+        <br />
+        <img id="gif" class="img-responsive" src="" hidden />
+      </div>
       <div id="feedback_div" hidden>
+          <br />
           <p id="feedback_msg"></p>
       </div>
 
-    </div>
-
-  </div>
-
 </body>
-
 </html>
